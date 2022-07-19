@@ -9,9 +9,18 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo ### building project ###
-  displayName: 'Build'
+jobs:
+- job: job1
+  steps: 
+  - script: echo ### building project ###
+    displayName: 'Build'
+  
+  - script: echo ### testing project ###
+    displayName: 'Test'
+  
+- job: job2
+  steps: 
+  - script: echo ### Releasing to QA ###
+    displayName: 'Release to QA' 
 
-- script: echo ### testing project ###
-  displayName: 'Test'
+
