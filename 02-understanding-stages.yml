@@ -26,8 +26,4 @@ stages:
 - stage: QADeploy
 - stage: ProdDeploy
 
-container::
-- script: echo job1 step1
-  displayName: 'Run a one-line script'
-
 
