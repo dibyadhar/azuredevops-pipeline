@@ -10,9 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: Building Project.
+- script: echo ### building project ###
   displayName: 'Build'
 
-- script: 
-    echo Testing Project.
+- script: echo ### testing project ###
   displayName: 'Test'
