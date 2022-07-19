@@ -19,8 +19,14 @@ jobs:
     displayName: 'Test'
   
 - job: job2
+  dependsOn: job1
   steps: 
   - script: echo Releasing to QA 
     displayName: 'Release to QA' 
 
+- job: job3
+  dependsOn: job2
+  steps: 
+  - script: echo Releasing to preprod 
+    displayName: 'Release to preprod' 
 
