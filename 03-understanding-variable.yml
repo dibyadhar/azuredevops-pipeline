@@ -9,6 +9,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo $(PipelineVar)
-  displayName: 'Run a one-line script'
+variables:
+  root_var: root_var_value 
+
+stages: 
+- stage: Build
+  jobs: 
+  - job: BuildJob
+    steps:
+    - script: echo $(PipelineVar)
+      displayName: 'GUI Variable'
+    
+    - script: echo $(root_var)
+      displayName: 'Root level variable'
