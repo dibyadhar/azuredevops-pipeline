@@ -15,8 +15,32 @@ stages:
   - job: FirstJob
     steps:
       - script: echo Build FirstJob
-        displayName: 'Firstjob'
+        displayName: 'FirstBuildJob'
   - job: SecondJob
     steps:
       - script: echo Build SecondJob
-        displayName: 'Firstjob'
+        displayName: 'SecondBuildJob'
+  
+ - stage: Test
+   jobs: 
+   - job: TestJob
+     steps: 
+     - script: testing the build
+       displayName: 'TestBuild'
+ 
+ - stage: DevDeploy
+   jobs: 
+   - job: DevDeploy
+     steps:
+     - script: echo Deploying to Dev
+       displayName: 'DevDeploy'
+     
+  - stage: QADeploy
+    jobs: 
+    - job: QADeploy
+      steps:
+       - script: echo Deploying to QA
+         displayName: 'QADeploy'
+       
+   
+   
