@@ -25,21 +25,21 @@ stages:
   jobs: 
   - job: TestJob
     steps: 
-    - script: testing the build
+    - script: echo testing the build
       displayName: 'TestBuild'
  
 - stage: DevDeploy
   jobs: 
   - job: DevDeploy
     steps:
-    - script: echo Deploying to Dev
+    - script: echo deploying to dev
       displayName: 'DevDeploy'
      
 - stage: QADeploy
   jobs: 
   - job: QADeploy
     steps:
-    - script: echo Deploying to QA
+    - script: echo deploying to qa
       displayName: 'QADeploy'
        
    
