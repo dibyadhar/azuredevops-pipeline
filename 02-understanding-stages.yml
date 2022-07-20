@@ -21,26 +21,26 @@ stages:
       - script: echo Build SecondJob
         displayName: 'SecondBuildJob'
   
- - stage: Test
-   jobs: 
-   - job: TestJob
-     steps: 
-     - script: testing the build
-       displayName: 'TestBuild'
+- stage: Test
+  jobs: 
+  - job: TestJob
+    steps: 
+    - script: testing the build
+      displayName: 'TestBuild'
  
- - stage: DevDeploy
-   jobs: 
-   - job: DevDeploy
-     steps:
-     - script: echo Deploying to Dev
-       displayName: 'DevDeploy'
+- stage: DevDeploy
+  jobs: 
+  - job: DevDeploy
+    steps:
+    - script: echo Deploying to Dev
+      displayName: 'DevDeploy'
      
-  - stage: QADeploy
-    jobs: 
-    - job: QADeploy
-      steps:
-       - script: echo Deploying to QA
-         displayName: 'QADeploy'
+- stage: QADeploy
+  jobs: 
+  - job: QADeploy
+    steps:
+    - script: echo Deploying to QA
+      displayName: 'QADeploy'
        
    
    
