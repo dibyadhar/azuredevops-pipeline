@@ -3,11 +3,12 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+name: cicd
+
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+
 
 variables:
   root_var: root_var_value 
@@ -16,6 +17,8 @@ stages:
 - stage: Build
   jobs: 
   - job: BuildJob
+    pool:
+      vmImage: ubuntu-latest
     steps:
     - script: echo $(PipelineVar)
       displayName: 'GUI Variable'
