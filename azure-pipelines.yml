@@ -18,3 +18,9 @@ steps:
     Contents: '**/*.yaml'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
   displayName: 'Copy files from working directory to Staging Directory'
+  
+- bash: |
+     ls -R $(System.DefaultWorkingDirectory)
+     ls -R $(Build.ArtifactStagingDirectory)
+  displayName: 'Run a one-line script'
+ 
