@@ -24,3 +24,8 @@ steps:
      ls -R $(Build.ArtifactStagingDirectory)
   displayName: 'Verifying Files Post Operation'
  
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'pipeline-code'
+    publishLocation: 'Container'
