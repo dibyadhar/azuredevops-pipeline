@@ -7,10 +7,14 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo $(System.DefaultWorkingDirectory)
+- bash: |
+   ls -R $(System.DefaultWorkingDirectory)
+   ls -R $(Build.ArtifactStagingDirectory)
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: '**/*.yaml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy files from working directory to Staging Directory'
