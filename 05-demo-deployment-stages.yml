@@ -8,15 +8,18 @@ pool:
 
 stages:
 - stage: build
+  displayName: Build
   jobs:
   - job: buildJob
     steps:
     - bash: echo "building the software"
 
 - stage: devDeploy
+  displayName: Deploy to Dev
   jobs:
   - deployment: devDeployJob
-    environment: Dev
+    displayName: Deploy to Dev
+    environment: DEV
     strategy:
       runOnce:
        deploy:
@@ -25,8 +28,10 @@ stages:
         
 
 - stage: QADeploy
+  displayName: Deploy to QA
   jobs:
   - deployment: qaDeployJob
+    displayName: Deploy to QA
     environment: QA
     strategy:
      runOnce:
