@@ -32,4 +32,4 @@ stages:
      runOnce:
        deploy:
          steps:
-           - bash: "Deploy to QA"
+           - bash: echo "Deploy to QA"
