@@ -11,6 +11,7 @@ stages:
   displayName: Build
   jobs:
   - job: buildJob
+    displayName: Build the software
     steps:
     - bash: echo "building the software"
 
