@@ -6,5 +6,5 @@ LABEL Maintainer "Dibya Dhar"
 
 RUN apt-get update -y && apt-get upgrade -y
 
-RUN apt intsall vim
+RUN apt-get install vim
 
